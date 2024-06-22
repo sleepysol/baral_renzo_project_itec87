@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RS Clothing Stocks</title>
+  <style>
+        .item {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .item-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .stock {
+            font-size: 0.9em;
+            color: #666;
+        }
+        .quantity-input {
+            width: 50px;
+            margin-right: 10px;
+        }
+        .buy-btn, .add-stock-btn {
+            background-color: blue;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+<h1>STOCKS</h1>
+<button onclick="location.href='BARAL_CLOTHING.html'">MAIN PAGE</button>
+<br>
+
+<div class="item" id="item1">
+    <div class="item-name">Straight Jeans</div>
+    <div class="stock">Stock: <span id="item1Stock">10</span></div>
+    <button class="add-stock-btn" onclick="addStock('item1')">Add Stock</button>
+    <label for="item1Quantity">Quantity:</label>
+    <input type="number" class="quantity-input" id="item1Quantity" value="1" min="1">
+    <button class="buy-btn" onclick="buyItem('item1')">Buy</button>
+</div>
+
+<div class="item" id="item2">
+    <div class="item-name">Skinny Jeans</div>
+    <div class="stock">Stock: <span id="item2Stock">15</span></div>
+    <button class="add-stock-btn" onclick="addStock('item2')">Add Stock</button>
+    <label for="item2Quantity">Quantity:</label>
+    <input type="number" class="quantity-input" id="item2Quantity" value="1" min="1">
+    <button class="buy-btn" onclick="buyItem('item2')">Buy</button>
+</div>
+
+<div class="item" id="item3">
+    <div class="item-name">Flared Jeans</div>
+    <div class="stock">Stock: <span id="item3Stock">25</span></div>
+    <button class="add-stock-btn" onclick="addStock('item3')">Add Stock</button>
+    <label for="item3Quantity">Quantity:</label>
+    <input type="number" class="quantity-input" id="item3Quantity" value="1" min="1">
+    <button class="buy-btn" onclick="buyItem('item3')">Buy</button>
+</div>
+
+<div class="item" id="item4">
+    <div class="item-name">Loose Jeans</div>
+    <div class="stock">Stock: <span id="item4Stock">10</span></div>
+    <button class="add-stock-btn" onclick="addStock('item4')">Add Stock</button>
+    <label for="item4Quantity">Quantity:</label>
+    <input type="number" class="quantity-input" id="item4Quantity" value="1" min="1">
+    <button class="buy-btn" onclick="buyItem('item4')">Buy</button>
+</div>
+
+<div class="item" id="item5">
+    <div class="item-name">Polo Shirt</div>
+    <div class="stock">Stock: <span id="item5Stock">15</span></div>
+    <button class="add-stock-btn" onclick="addStock('item5')">Add Stock</button>
+    <label for="item5Quantity">Quantity:</label>
+    <input type="number" class="quantity-input" id="item5Quantity" value="1" min="1">
+    <button class="buy-btn" onclick="buyItem('item5')">Buy</button>
+</div>
+
+<div class="item" id="item6">
+    <div class="item-name">V-Neck Shirt</div>
+    <div class="stock">Stock: <span id="item6Stock">25</span></div>
+    <button class="add-stock-btn" onclick="addStock('item6')">Add Stock</button>
+    <label for="item6Quantity">Quantity:</label>
+    <input type="number" class="quantity-input" id="item6Quantity" value="1" min="1">
+    <button class="buy-btn" onclick="buyItem('item6')">Buy</button>
+</div>
+
+<div class="item" id="item7">
+    <div class="item-name">TurtleNeck Shirt</div>
+    <div class="stock">Stock: <span id="item7Stock">10</span></div>
+    <button class="add-stock-btn" onclick="addStock('item7')">Add Stock</button>
+    <label for="item7Quantity">Quantity:</label>
+    <input type="number" class="quantity-input" id="item7Quantity" value="1" min="1">
+    <button class="buy-btn" onclick="buyItem('item7')">Buy</button>
+</div>
+
+<div class="item" id="item8">
+    <div class="item-name">Longsleeves Shirt</div>
+    <div class="stock">Stock: <span id="item8Stock">15</span></div>
+    <button class="add-stock-btn" onclick="addStock('item8')">Add Stock</button>
+    <label for="item8Quantity">Quantity:</label>
+    <input type="number" class="quantity-input" id="item8Quantity" value="1" min="1">
+    <button class="buy-btn" onclick="buyItem('item8')">Buy</button>
+</div>
+
+<div class="item" id="item9">
+    <div class="item-name">Jovan</div>
+    <div class="stock">Stock: <span id="item9Stock">25</span></div>
+    <button class="add-stock-btn" onclick="addStock('item9')">Add Stock</button>
+    <label for="item9Quantity">Quantity:</label>
+    <input type="number" class="quantity-input" id="item9Quantity" value="1" min="1">
+    <button class="buy-btn" onclick="buyItem('item9')">Buy</button>
+</div>
+
+<div class="item" id="item10">
+    <div class="item-name">Versace</div>
+    <div class="stock">Stock: <span id="item10Stock">10</span></div>
+    <button class="add-stock-btn" onclick="addStock('item10')">Add Stock</button>
+    <label for="item10Quantity">Quantity:</label>
+    <input type="number" class="quantity-input" id="item10Quantity" value="1" min="1">
+    <button class="buy-btn" onclick="buyItem('item10')">Buy</button>
+</div>
+
+<div class="item" id="item11">
+    <div class="item-name">Addidas</div>
+    <div class="stock">Stock: <span id="item11Stock">15</span></div>
+    <button class="add-stock-btn" onclick="addStock('item11')">Add Stock</button>
+    <label for="item11Quantity">Quantity:</label>
+    <input type="number" class="quantity-input" id="item11Quantity" value="1" min="1">
+    <button class="buy-btn" onclick="buyItem('item11')">Buy</button>
+</div>
+
+<div class="item" id="item12">
+    <div class="item-name">Polo</div>
+    <div class="stock">Stock: <span id="item12Stock">25</span></div>
+    <button class="add-stock-btn" onclick="addStock('item12')">Add Stock</button>
+    <label for="item12Quantity">Quantity:</label>
+    <input type="number" class="quantity-input" id="item12Quantity" value="1" min="1">
+    <button class="buy-btn" onclick="buyItem('item12')">Buy</button>
+</div>
+
+<div class="item" id="item13">
+    <div class="item-name">Racerback</div>
+    <div class="stock">Stock: <span id="item13Stock">10</span></div>
+    <button class="add-stock-btn" onclick="addStock('item13')">Add Stock</button>
+    <label for="item13Quantity">Quantity:</label>
+    <input type="number" class="quantity-input" id="item13Quantity" value="1" min="1">
+    <button class="buy-btn" onclick="buyItem('item13')">Buy</button>
+</div>
+
+<div class="item" id="item14">
+    <div class="item-name">Athletic</div>
+    <div class="stock">Stock: <span id="item14Stock">15</span></div>
+    <button class="add-stock-btn" onclick="addStock('item14')">Add Stock</button>
+    <label for="item14Quantity">Quantity:</label>
+    <input type="number" class="quantity-input" id="item14Quantity" value="1" min="1">
+    <button class="buy-btn" onclick="buyItem('item14')">Buy</button>
+</div>
+
+<div class="item" id="item15">
+    <div class="item-name">Backless</div>
+    <div class="stock">Stock: <span id="item15Stock">25</span></div>
+    <button class="add-stock-btn" onclick="addStock('item15')">Add Stock</button>
+    <label for="item15Quantity">Quantity:</label>
+    <input type="number" class="quantity-input" id="item15Quantity" value="1" min="1">
+    <button class="buy-btn" onclick="buyItem('item15')">Buy</button>
+</div>
+
+<div class="item" id="item16">
+    <div class="item-name">Double Layer</div>
+    <div class="stock">Stock: <span id="item16Stock">10</span></div>
+    <button class="add-stock-btn" onclick="addStock('item16')">Add Stock</button>
+    <label for="item16Quantity">Quantity:</label>
+    <input type="number" class="quantity-input" id="item16Quantity" value="1" min="1">
+    <button class="buy-btn" onclick="buyItem('item16')">Buy</button>
+</div>
+
+<div class="item" id="item17">
+    <div class="item-name">Car</div>
+    <div class="stock">Stock: <span id="item17Stock">15</span></div>
+    <button class="add-stock-btn" onclick="addStock('item17')">Add Stock</button>
+    <label for="item17Quantity">Quantity:</label>
+    <input type="number" class="quantity-input" id="item17Quantity" value="1" min="1">
+    <button class="buy-btn" onclick="buyItem('item17')">Buy</button>
+</div>
+
+<div class="item" id="item18">
+    <div class="item-name">Doll</div>
+    <div class="stock">Stock: <span id="item18Stock">25</span></div>
+    <button class="add-stock-btn" onclick="addStock('item18')">Add Stock</button>
+    <label for="item18Quantity">Quantity:</label>
+    <input type="number" class="quantity-input" id="item18Quantity" value="1" min="1">
+    <button class="buy-btn" onclick="buyItem('item18')">Buy</button>
+</div>
+
+<div class="item" id="item19">
+    <div class="item-name">Board Games</div>
+    <div class="stock">Stock: <span id="item19Stock">10</span></div>
+    <button class="add-stock-btn" onclick="addStock('item19')">Add Stock</button>
+    <label for="item19Quantity">Quantity:</label>
+    <input type="number" class="quantity-input" id="item19Quantity" value="1" min="1">
+    <button class="buy-btn" onclick="buyItem('item19')">Buy</button>
+</div>
+
+<div class="item" id="item20">
+    <div class="item-name">Action Figure</div>
+    <div class="stock">Stock: <span id="item20Stock">15</span></div>
+    <button class="add-stock-btn" onclick="addStock('item20')">Add Stock</button>
+    <label for="item20Quantity">Quantity:</label>
+    <input type="number" class="quantity-input" id="item20Quantity" value="1" min="1">
+    <button class="buy-btn" onclick="buyItem('item20')">Buy</button>
+</div>
+
+
+
+<script>
+    
+    var stocks = {
+        item1: 10,
+        item2: 15,
+		item3: 25,
+		item4: 10,
+		item5: 15,
+		item6: 25,
+        item7: 10,
+		item8: 15,
+		item9: 25,
+		item10: 10,
+		item11: 15,
+		item12: 25,
+		item13: 10,
+		item14: 15,
+		item15: 25,
+		item16: 10,
+		item17: 15,
+		item18: 25,
+		item19: 10,
+		item20: 15,
+    };
+
+    
+    function updateStockDisplay(itemId, newStock) {
+        document.getElementById(itemId + 'Stock').innerText = newStock;
+    }
+
+    
+    function buyItem(itemId) {
+        var currentStock = stocks[itemId];
+        var quantityInput = document.getElementById(itemId + 'Quantity');
+        var quantity = parseInt(quantityInput.value);
+
+        if (quantity <= 0 || isNaN(quantity)) {
+            alert('Please enter a valid quantity.');
+            return;
+        }
+
+        if (currentStock >= quantity) {
+            var newStock = currentStock - quantity;
+            stocks[itemId] = newStock; 
+            updateStockDisplay(itemId, newStock); 
+            alert('Item(s) purchased successfully!');
+        } else {
+            alert('Sorry, there is not enough stock for your requested quantity.');
+        }
+    }
+
+    
+    function addStock(itemId) {
+        var quantityInput = document.getElementById(itemId + 'Quantity');
+        var quantity = parseInt(quantityInput.value);
+
+        if (quantity <= 0 || isNaN(quantity)) {
+            alert('Please enter a valid quantity.');
+            return;
+        }
+
+        stocks[itemId] += quantity; 
+        updateStockDisplay(itemId, stocks[itemId]); 
+        alert('Stock added successfully!');
+    }
+</script>
+</body>
+</html>

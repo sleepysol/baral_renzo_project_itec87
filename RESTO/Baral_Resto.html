@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resto Menu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: gray;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1em;
+    }
+
+    nav {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: gray;
+      background-color: black;
+      border-radius: 5px;
+      margin: 10px;
+      transition: background-color 0.5s;
+    }
+
+    nav a:hover {
+      background-color: white;
+	  transform:scale(1.1);
+    }
+
+    section {
+      text-align: center;
+    }
+
+    .menu-item {
+      border: 5px solid #ddd;
+      background-color: #fff;
+      padding: 20px;
+      margin: 10px;
+      border-radius: 5px;
+      display: block;
+	  text-align: center;
+    }
+	
+	#scrollBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 9999;
+    border: 5px solid black;
+    outline: none;
+    background-color: gray;
+    color: white;
+    cursor: pointer;
+    padding: 2px;
+    border-radius: 20%;
+  }
+  
+  .img:hover {
+	transform:scale(1.1);
+  }
+  .stock{
+      display: inline-block;
+      padding: 10px 20px;
+      color: white;
+      background-color: black;
+      border-radius: 5px;
+      margin: 10px;
+	  cursor: pointer;
+    }
+
+
+  </style>
+</head>
+<body>
+<button class="stock" onclick="location.href='../index.html'">Back</button>
+  <header>
+    <h1>Kain ka na ya!!!</h1>
+  </header>
+
+  <nav>
+    <a href="#main-dish">Main Dish</a>
+    <a href="#vegetable">Vegetables</a>
+    <a href="#desserts">Desserts</a>
+    <a href="#drinks">Drinks</a>
+    <a href="#add-ons">Add-ons</a>
+  </nav>
+<div class="menu-item">
+Total Price: ₱<span id="totalPrice">0</span>
+</div>
+  <section>
+    <div id="main-dish" class="menu-item">
+      <h1>Main Dish</h1>
+      <p>Pick what you like.</p>
+	  <br>
+	  <p><b>Tinola</b></p>
+	  <p><b>₱89.00</b></p>
+	  <input type="checkbox" id="product1Checkbox" onchange="calculateTotal()" />
+	  <input type="number" id="product1Quantity" value="0" onchange="calculateTotal()">
+	  <br>
+	  <br>
+	  <img src = "Tinola.webp" alt="Tinola" style="border-radius: 10%; height: 550px; width: 550px; border: 3px solid; border-color: black;">
+	  <p><b>Adobo</b></p>
+	  <p><b>₱63.00</b></p>
+	  <input type="checkbox" id="product2Checkbox" onchange="calculateTotal()" />
+	  <input type="number" id="product2Quantity" value="0" onchange="calculateTotal()">
+	  <br>
+	  <br>
+	  <img src = "Adobo.webp" alt="Adobo" style="border-radius: 10%; height: 550px; width: 550px; border: 3px solid; border-color: black;">
+	  <p><b>Burger</b></p>
+	  <p><b>₱129.00</b></p>
+	  <input type="checkbox" id="product3Checkbox" onchange="calculateTotal()" />
+	  <input type="number" id="product3Quantity" value="0" onchange="calculateTotal()">
+	  <br>
+	  <br>
+	  <img src = "Burgir.webp" alt="Burgir" style="border-radius: 10%; height: 550px; width: 550px; border: 3px solid; border-color: black;">
+	  
+    </div>
+
+    <div id="vegetable" class="menu-item">
+      <h1>Vegetables</h1>
+      <p>Pick what you like.</p>
+	  <br>
+	  <p><b>Ampalaya</b></p>
+	  <p><b>₱39.00</b></p>
+	  <input type="checkbox" id="product4Checkbox" onchange="calculateTotal()" />
+	  <input type="number" id="product4Quantity" value="0" onchange="calculateTotal()">
+	  <br>
+	  <br>
+	  <img src = "Ampalaya.jpg" alt="Ampalaya" style="border-radius: 10%; height: 550px; width: 550px; border: 3px solid; border-color: black;">
+	  <p><b>Bulanglang</b></p>
+	  <p><b>₱49.00</b></p>
+	  <input type="checkbox" id="product5Checkbox" onchange="calculateTotal()" />
+	  <input type="number" id="product5Quantity" value="0" onchange="calculateTotal()">
+	  <br>
+	  <br>
+	  <img src = "Bulanglang.jpg" alt="Bulanglang" style="border-radius: 10%; height: 550px; width: 550px; border: 3px solid; border-color: black;">
+	  <p><b>Ginataang Sitaw</b></p>
+	  <p><b>₱44.00</b></p>
+	  <input type="checkbox" id="product6Checkbox" onchange="calculateTotal()" />
+	  <input type="number" id="product6Quantity" value="0" onchange="calculateTotal()">
+	  <br>
+	  <br>
+	  <img src = "Ginataang.jpg" alt="GinataangSitaw" style="border-radius: 10%; height: 550px; width: 550px; border: 3px solid; border-color: black;">
+	  
+	  
+
+    </div>
+
+    <div id="desserts" class="menu-item">
+      <h1>Desserts</h1>
+      <p>Pick what you like.</p>
+	  <br>
+	  <p><b>Biko</b></p>
+	  <p><b>₱89.00</b></p>
+	  <input type="checkbox" id="product7Checkbox" onchange="calculateTotal()" />
+	  <input type="number" id="product7Quantity" value="0" onchange="calculateTotal()">
+	  <br>
+	  <br>
+	  <img src = "Biko.webp" alt="Biko" style="border-radius: 10%; height: 550px; width: 550px; border: 3px solid; border-color: black;">
+	  <p><b>Halo-Halo</b></p>
+	  <p><b>₱68.00</b></p>
+	  <input type="checkbox" id="product8Checkbox" onchange="calculateTotal()" />
+	  <input type="number" id="product8Quantity" value="0" onchange="calculateTotal()">
+	  <br>
+	  <br>
+	  <img src = "Halo.webp" alt="Halo-Halo" style="border-radius: 10%; height: 550px; width: 550px; border: 3px solid; border-color: black;">
+	  <p><b>Mamon</b></p>
+	  <p><b>₱27.00</b></p>
+	  <input type="checkbox" id="product9Checkbox" onchange="calculateTotal()" />
+	  <input type="number" id="product9Quantity" value="0" onchange="calculateTotal()">
+	  <br>
+	  <br>
+	  <img src = "Mamon.webp" alt="Mamon" style="border-radius: 10%; height: 550px; width: 550px; border: 3px solid; border-color: black;">
+	  
+
+    </div>
+
+    <div id="drinks" class="menu-item">
+      <h1>Drinks</h1>
+      <p>Pick what you like.</p>
+	  <p><b>Melon Shake</b></p>
+	  <p><b>₱69.00</b></p>
+	  <input type="checkbox" id="product10Checkbox" onchange="calculateTotal()" />
+	  <input type="number" id="product10Quantity" value="0" onchange="calculateTotal()">
+	  <br>
+	  <br>
+	  <img src = "melon.webp" alt="Melon" style="border-radius: 10%; height: 550px; width: 550px; border: 3px solid; border-color: black;">
+	  <p><b>Calamansi Juice</b></p>
+	  <p><b>₱39.00</b></p>
+	  <input type="checkbox" id="product11Checkbox" onchange="calculateTotal()" />
+	  <input type="number" id="product11Quantity" value="0" onchange="calculateTotal()">
+	  <br>
+	  <br>
+	  <img src = "calamansi.webp" alt="Calamansi" style="border-radius: 10%; height: 550px; width: 550px; border: 3px solid; border-color: black;">
+	  <p><b>Sago't Gulaman</b></p>
+	  <p><b>₱35.00</b></p>
+	  <input type="checkbox" id="product12Checkbox" onchange="calculateTotal()" />
+	  <input type="number" id="product12Quantity" value="0" onchange="calculateTotal()">
+	  <br>
+	  <br>
+	  <img src = "sago.webp" alt="Sago" style="border-radius: 10%; height: 550px; width: 550px; border: 3px solid; border-color: black;">
+	  
+
+    </div>
+
+    <div id="add-ons" class="menu-item">
+      <h1>Add-ons</h1>
+      <p>Pick what you like.</p>
+	  <p><b>Nachos</b></p>
+	  <p><b>₱25.00</b></p>
+	  <input type="checkbox" id="product13Checkbox" onchange="calculateTotal()" />
+	  <input type="number" id="product13Quantity" value="0" onchange="calculateTotal()">
+	  <br>
+	  <br>
+	  <img src = "nachos.jpg" alt="Nachos" style="border-radius: 10%; height: 550px; width: 550px; border: 3px solid; border-color: black;">
+	  <p><b>French Fries</b></p>
+	  <p><b>₱36.00</b></p>
+	  <input type="checkbox" id="product14Checkbox" onchange="calculateTotal()" />
+	  <input type="number" id="product14Quantity" value="0" onchange="calculateTotal()">
+	  <br>
+	  <br>
+	  <img src = "fries.webp" alt="Fries" style="border-radius: 10%; height: 550px; width: 550px; border: 3px solid; border-color: black;">
+	  <p><b>Ice Cream</b></p>
+	  <p><b>₱22.00</b></p>
+	  <input type="checkbox" id="product15Checkbox" onchange="calculateTotal()" />
+	  <input type="number" id="product15Quantity" value="0" onchange="calculateTotal()">
+	  <br>
+	  <br>
+	  <img src = "icecream.webp" alt="Icecream" style="border-radius: 10%; height: 550px; width: 550px; border: 3px solid; border-color: black;">
+
+    </div>
+  </section>
+  
+<button id="scrollBtn" onclick="scrollToTop()"><img src = "up.png" alt="UP" style="border-radius: 10%; height: 40px; width: 40px; border-color: black;"></button>
+
+<script>
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  var scrollButton = document.getElementById("scrollBtn");
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    scrollButton.style.display = "block";
+  } else {
+    scrollButton.style.display = "none";
+  }
+}
+
+function scrollToTop() {
+  document.documentElement.scrollTop = 0; 
+}
+
+function calculateTotal() {
+  var product1Price = 89.00;
+  var product2Price = 63.00;
+  var product3Price = 129.00;
+  var product4Price = 39.00;
+  var product5Price = 49.00;
+  var product6Price = 44.00;
+  var product7Price = 89.00;
+  var product8Price = 68.00;
+  var product9Price = 27.00;
+  var product10Price = 69.00;
+  var product11Price = 39.00;
+  var product12Price = 35.00;
+  var product13Price = 25.00;
+  var product14Price = 36.00;
+  var product15Price = 22.00;
+
+
+  var product1Quantity = parseInt(document.getElementById("product1Quantity").value);
+  var product2Quantity = parseInt(document.getElementById("product2Quantity").value);
+  var product3Quantity = parseInt(document.getElementById("product3Quantity").value);
+  var product4Quantity = parseInt(document.getElementById("product4Quantity").value);
+  var product5Quantity = parseInt(document.getElementById("product5Quantity").value);
+  var product6Quantity = parseInt(document.getElementById("product6Quantity").value);
+  var product7Quantity = parseInt(document.getElementById("product7Quantity").value);
+  var product8Quantity = parseInt(document.getElementById("product8Quantity").value);
+  var product9Quantity = parseInt(document.getElementById("product9Quantity").value);
+  var product10Quantity = parseInt(document.getElementById("product10Quantity").value);
+  var product11Quantity = parseInt(document.getElementById("product11Quantity").value);
+  var product12Quantity = parseInt(document.getElementById("product12Quantity").value);
+  var product13Quantity = parseInt(document.getElementById("product13Quantity").value);
+  var product14Quantity = parseInt(document.getElementById("product14Quantity").value);
+  var product15Quantity = parseInt(document.getElementById("product15Quantity").value);
+  
+  var totalPrice = 0;
+
+  if (document.getElementById("product1Checkbox").checked) {
+    totalPrice += product1Price * product1Quantity;
+  }
+
+  if (document.getElementById("product2Checkbox").checked) {
+    totalPrice += product2Price * product2Quantity;
+  }
+  
+  if (document.getElementById("product3Checkbox").checked) {
+    totalPrice += product3Price * product3Quantity;
+  }
+  
+  if (document.getElementById("product4Checkbox").checked) {
+    totalPrice += product4Price * product4Quantity;
+  }
+  
+  if (document.getElementById("product5Checkbox").checked) {
+    totalPrice += product5Price * product5Quantity;
+  }
+  
+  if (document.getElementById("product6Checkbox").checked) {
+    totalPrice += product6Price * product6Quantity;
+  }
+  
+  if (document.getElementById("product7Checkbox").checked) {
+    totalPrice += product7Price * product7Quantity;
+  }
+  
+  if (document.getElementById("product8Checkbox").checked) {
+    totalPrice += product8Price * product8Quantity;
+  }
+  
+  if (document.getElementById("product9Checkbox").checked) {
+    totalPrice += product9Price * product9Quantity;
+  }
+  
+  if (document.getElementById("product10Checkbox").checked) {
+    totalPrice += product10Price * product10Quantity;
+  }
+  
+  if (document.getElementById("product11Checkbox").checked) {
+    totalPrice += product11Price * product11Quantity;
+  }
+  
+  if (document.getElementById("product12Checkbox").checked) {
+    totalPrice += product12Price * product12Quantity;
+  }
+
+  
+  
+
+  document.getElementById("totalPrice").textContent = totalPrice;
+}
+</script>
+</body>
+</html>
+

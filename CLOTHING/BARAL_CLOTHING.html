@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RS Clothing</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: gray;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1em;
+    }
+
+    nav {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: gray;
+      background-color: black;
+      border-radius: 5px;
+      margin: 10px;
+      transition: background-color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: white;
+    }
+
+    section {
+      text-align: center;
+    }
+
+    .clothing-item {
+      border: 5px solid #ddd;
+      background-color: #fff;
+      padding: 20px;
+      margin: 10px;
+      border-radius: 5px;
+      display: block;
+	  text-align: center;
+    }
+	
+	#scrollBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 9999;
+    border: 5px solid black;
+    outline: none;
+    background-color: gray;
+    color: white;
+    cursor: pointer;
+    padding: 2px;
+    border-radius: 20%;
+  }
+	.price{
+      border: 5px solid #ddd;
+      background-color: #fff;
+      padding: 20px;
+      margin: 10px;
+      border-radius: 5px;
+      display: block;
+	  text-align: center;
+  }
+   .stock{
+      display: inline-block;
+      padding: 10px 20px;
+      color: white;
+      background-color: black;
+      border-radius: 5px;
+      margin: 10px;
+	  cursor: pointer;
+    }
+
+  </style>
+</head>
+<body>
+<button class="stock" onclick="location.href='../index.html'">← HOME</button>
+  <header>
+    
+	<img src = "HRM.jpg" alt="HRM" style="border-radius: 50%; height: 150px; width: 150px; border: 3px solid; border-color: black;">
+    <h1>Renzo Symon Clothing</h1>
+	
+  </header>
+
+  <nav>
+    <a href="#jeans">Jeans</a>
+    <a href="#t-shirt">T-Shirt</a>
+    <a href="#perfume">Perfume</a>
+    <a href="#sando">Sando</a>
+    <a href="#toys">Toys</a>
+  </nav>
+<div class="price">
+  <br>
+	<h1>Total Price: ₱<span id="totalPrice">0</span></h1>
+    <h2>Discounts</h2>
+    <input type="radio" id="noDiscount" name="discount" value="0" checked onchange="calculateTotal()">
+    <label for="noDiscount">No Discount</label><br>
+    <input type="radio" id="seniorDiscount" name="discount" value="20" onchange="calculateTotal()">
+    <label for="seniorDiscount">Senior - 20%</label><br>
+    <input type="radio" id="pwdDiscount" name="discount" value="30" onchange="calculateTotal()">
+    <label for="pwdDiscount">PWD - 30%</label><br>
+    <input type="radio" id="studentDiscount" name="discount" value="10" onchange="calculateTotal()">
+    <label for="studentDiscount">Student - 10%</label><br><br>
+	<button class="stock" onclick="location.href='discount.html'">STOCKS PAGE</button>
+</div>
+
+  <section>
+    <div id="jeans" class="clothing-item">
+      <h1>Jeans</h1>
+      
+	  <br>
+	  <p><b>Straight Jeans Php. 550.00</b></p>
+	  <input type="checkbox" id="product1Checkbox" onchange="calculateTotal()" />
+	  <input type="number" id="product1Quantity" value="0" onchange="calculateTotal()">
+	  <br>
+	  <br>
+	  <img src = "straight.jpg" alt="straight" style="border-radius: 10%; height: 250px; width: 250px; border: 3px solid; border-color: black;">
+	  <p><b>Skinny Jeans Php. 450.00</b></p>
+	  <input type="checkbox" id="product2Checkbox" onchange="calculateTotal()" />
+	  <input type="number" id="product2Quantity" value="0" onchange="calculateTotal()">
+	  <br>
+	  <br>
+	  <img src = "skinny.jpg" alt="skinny" style="border-radius: 10%; height: 250px; width: 250px; border: 3px solid; border-color: black;">
+	  <p><b>Flared Jeans Php. 650.00</b></p>
+	  <input type="checkbox" id="product3Checkbox" onchange="calculateTotal()" />
+	  <input type="number" id="product3Quantity" value="0" onchange="calculateTotal()">
+	  <br>
+	  <br>
+	  <img src = "flared.jpg" alt="flared" style="border-radius: 10%; height: 250px; width: 250px; border: 3px solid; border-color: black;">
+	  <p><b>Loose Jeans Php. 600.00</b></p>
+	  <input type="checkbox" id="product16Checkbox" onchange="calculateTotal()" />
+	  <input type="number" id="product16Quantity" value="0" onchange="calculateTotal()">
+	  <br>
+	  <br>
+	  <img src = "loose.jpg" alt="loose" style="border-radius: 10%; height: 250px; width: 250px; border: 3px solid; border-color: black;">
+	  
+    </div>
+
+    <div id="t-shirt" class="clothing-item">
+      <h1>T-Shirt</h1>
+      
+	  <br>
+	  <p><b>Polo Shirt Php. 250.00</b></p>
+	  <input type="checkbox" id="product4Checkbox" onchange="calculateTotal()" />
+	  <input type="number" id="product4Quantity" value="0" onchange="calculateTotal()">
+	  <br>
+	  <br>
+	  <img src = "polo_shirt.jpg" alt="polo-shirt" style="border-radius: 10%; height: 250px; width: 250px; border: 3px solid; border-color: black;">
+	  <p><b>V-Neck Shirt Php. 155.00</b></p>
+	  <input type="checkbox" id="product5Checkbox" onchange="calculateTotal()" />
+	  <input type="number" id="product5Quantity" value="0" onchange="calculateTotal()">
+	  <br>
+	  <br>
+	  <img src = "vneck.jpg" alt="VNeck" style="border-radius: 10%; height: 250px; width: 250px; border: 3px solid; border-color: black;">
+	  <p><b>TurtleNeck Shirt Php. 350.00</b></p>
+	  <input type="checkbox" id="product6Checkbox" onchange="calculateTotal()" />
+	  <input type="number" id="product6Quantity" value="0" onchange="calculateTotal()">
+	  <br>
+	  <br>
+	  <img src = "tneck.jpg" alt="tneck" style="border-radius: 10%; height: 250px; width: 250px; border: 3px solid; border-color: black;">
+	  <p><b>Longsleeves Shirt Php. 500.49</b></p>
+	  <input type="checkbox" id="product17Checkbox" onchange="calculateTotal()" />
+	  <input type="number" id="product17Quantity" value="0" onchange="calculateTotal()">
+	  <br>
+	  <br>
+	  <img src = "lsleeve.jpg" alt="lsleeve" style="border-radius: 10%; height: 250px; width: 250px; border: 3px solid; border-color: black;">
+	  
+	  
+
+    </div>
+
+    <div id="perfume" class="clothing-item">
+      <h1>Perfume</h1>
+      
+	  <br>
+	  <p><b>Jovan Php. 999.99</b></p>
+	  <input type="checkbox" id="product7Checkbox" onchange="calculateTotal()" />
+	  <input type="number" id="product7Quantity" value="0" onchange="calculateTotal()">
+	  <br>
+	  <br>
+	  <img src = "jovan.jpg" alt="jovan" style="border-radius: 10%; height: 250px; width: 250px; border: 3px solid; border-color: black;">
+	  <p><b>Versace Php. 1599.79</b></p>
+	  <input type="checkbox" id="product8Checkbox" onchange="calculateTotal()" />
+	  <input type="number" id="product8Quantity" value="0" onchange="calculateTotal()">
+	  <br>
+	  <br>
+	  <img src = "versace.jpg" alt="versace" style="border-radius: 10%; height: 250px; width: 250px; border: 3px solid; border-color: black;">
+	  <p><b>Addidas Php. 599.89</b></p>
+	  <input type="checkbox" id="product9Checkbox" onchange="calculateTotal()" />
+	  <input type="number" id="product9Quantity" value="0" onchange="calculateTotal()">
+	  <br>
+	  <br>
+	  <img src = "addidas.jpg" alt="addidas" style="border-radius: 10%; height: 250px; width: 250px; border: 3px solid; border-color: black;">
+	  <p><b>Polo Php. 600.59</b></p>
+	  <input type="checkbox" id="product18Checkbox" onchange="calculateTotal()" />
+	  <input type="number" id="product18Quantity" value="0" onchange="calculateTotal()">
+	  <br>
+	  <br>
+	  <img src = "polo.jpg" alt="polo" style="border-radius: 10%; height: 250px; width: 250px; border: 3px solid; border-color: black;">
+	  
+
+    </div>
+
+    <div id="sando" class="clothing-item">
+      <h1>Sando</h1>
+      
+	  <p><b>Racerback Php. 159.99</b></p>
+	  <input type="checkbox" id="product10Checkbox" onchange="calculateTotal()" />
+	  <input type="number" id="product10Quantity" value="0" onchange="calculateTotal()">
+	  <br>
+	  <br>
+	  <img src = "rback.jpg" alt="rback" style="border-radius: 10%; height: 250px; width: 250px; border: 3px solid; border-color: black;">
+	  <p><b>Athletic Php. 319.25</b></p>
+	  <input type="checkbox" id="product11Checkbox" onchange="calculateTotal()" />
+	  <input type="number" id="product11Quantity" value="0" onchange="calculateTotal()">
+	  <br>
+	  <br>
+	  <img src = "athletic.jpg" alt="athletic" style="border-radius: 10%; height: 250px; width: 250px; border: 3px solid; border-color: black;">
+	  <p><b>Backless Php. 284.50</b></p>
+	  <input type="checkbox" id="product12Checkbox" onchange="calculateTotal()" />
+	  <input type="number" id="product12Quantity" value="0" onchange="calculateTotal()">
+	  <br>
+	  <br>
+	  <img src = "backless.jpg" alt="backless" style="border-radius: 10%; height: 250px; width: 250px; border: 3px solid; border-color: black;">
+	  <p><b>Double Layer Php. 101.89</b></p>
+	  <input type="checkbox" id="product19Checkbox" onchange="calculateTotal()" />
+	  <input type="number" id="product19Quantity" value="0" onchange="calculateTotal()">
+	  <br>
+	  <br>
+	  <img src = "double.jpg" alt="double" style="border-radius: 10%; height: 250px; width: 250px; border: 3px solid; border-color: black;">
+	  
+
+    </div>
+
+    <div id="toys" class="clothing-item">
+      <h1>Toys</h1>
+      
+	  <p><b>Car Php. 99.75</b></p>
+	  <input type="checkbox" id="product13Checkbox" onchange="calculateTotal()" />
+	  <input type="number" id="product13Quantity" value="0" onchange="calculateTotal()">
+	  <br>
+	  <br>
+	  <img src = "car.jpg" alt="car" style="border-radius: 10%; height: 250px; width: 250px; border: 3px solid; border-color: black;">
+	  <p><b>Doll Php. 139.49</b></p>
+	  <input type="checkbox" id="product14Checkbox" onchange="calculateTotal()" />
+	  <input type="number" id="product14Quantity" value="0" onchange="calculateTotal()">
+	  <br>
+	  <br>
+	  <img src = "doll.jpg" alt="doll" style="border-radius: 10%; height: 250px; width: 250px; border: 3px solid; border-color: black;">
+	  <p><b>Board Games Php. 200.00</b></p>
+	  <input type="checkbox" id="product15Checkbox" onchange="calculateTotal()" />
+	  <input type="number" id="product15Quantity" value="0" onchange="calculateTotal()">
+	  <br>
+	  <br>
+	  <img src = "board.jpg" alt="board" style="border-radius: 10%; height: 250px; width: 250px; border: 3px solid; border-color: black;">
+	  <p><b>Action Figure Php. 999.50</b></p>
+	  <input type="checkbox" id="product20Checkbox" onchange="calculateTotal()" />
+	  <input type="number" id="product20Quantity" value="0" onchange="calculateTotal()">
+	  <br>
+	  <br>
+	  <img src = "action.jpg" alt="action" style="border-radius: 10%; height: 250px; width: 250px; border: 3px solid; border-color: black;">
+
+    </div>
+  </section>
+  
+<button id="scrollBtn" onclick="scrollToTop()"><img src = "up.png" alt="UP" style="border-radius: 10%; height: 40px; width: 40px; border-color: black;"></button>
+
+<script>
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  var scrollButton = document.getElementById("scrollBtn");
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    scrollButton.style.display = "block";
+  } else {
+    scrollButton.style.display = "none";
+  }
+}
+
+function scrollToTop() {
+  document.documentElement.scrollTop = 0; 
+}
+
+function calculateTotal() {
+  var product1Price = 550;
+  var product2Price = 450;
+  var product3Price = 650;
+  var product4Price = 250;
+  var product5Price = 155;
+  var product6Price = 350;
+  var product7Price = 999.99;
+  var product8Price = 1599.79;
+  var product9Price = 599.89;
+  var product10Price = 159.99;
+  var product11Price = 319.25;
+  var product12Price = 284.50;
+  var product13Price = 99.75;
+  var product14Price = 139.49;
+  var product15Price = 200;
+  var product16Price = 600;
+  var product17Price = 500.49;
+  var product18Price = 600.89;
+  var product19Price = 101.89;
+  var product20Price = 999.50;
+  
+
+  var product1Quantity = parseInt(document.getElementById("product1Quantity").value);
+  var product2Quantity = parseInt(document.getElementById("product2Quantity").value);
+  var product3Quantity = parseInt(document.getElementById("product3Quantity").value);
+  var product4Quantity = parseInt(document.getElementById("product4Quantity").value);
+  var product5Quantity = parseInt(document.getElementById("product5Quantity").value);
+  var product6Quantity = parseInt(document.getElementById("product6Quantity").value);
+  var product7Quantity = parseInt(document.getElementById("product7Quantity").value);
+  var product8Quantity = parseInt(document.getElementById("product8Quantity").value);
+  var product9Quantity = parseInt(document.getElementById("product9Quantity").value);
+  var product10Quantity = parseInt(document.getElementById("product10Quantity").value);
+  var product11Quantity = parseInt(document.getElementById("product11Quantity").value);
+  var product12Quantity = parseInt(document.getElementById("product12Quantity").value);
+  var product13Quantity = parseInt(document.getElementById("product13Quantity").value);
+  var product14Quantity = parseInt(document.getElementById("product14Quantity").value);
+  var product15Quantity = parseInt(document.getElementById("product15Quantity").value);
+  var product16Quantity = parseInt(document.getElementById("product16Quantity").value);
+  var product17Quantity = parseInt(document.getElementById("product17Quantity").value);
+  var product18Quantity = parseInt(document.getElementById("product18Quantity").value);
+  var product19Quantity = parseInt(document.getElementById("product19Quantity").value);
+  var product20Quantity = parseInt(document.getElementById("product20Quantity").value);
+
+  var totalPrice = 0;
+
+  if (document.getElementById("product1Checkbox").checked) {
+    totalPrice += product1Price * product1Quantity;
+  }
+
+  if (document.getElementById("product2Checkbox").checked) {
+    totalPrice += product2Price * product2Quantity;
+  }
+
+  if (document.getElementById("product3Checkbox").checked) {
+    totalPrice += product3Price * product3Quantity;
+  }
+  
+  if (document.getElementById("product4Checkbox").checked) {
+    totalPrice += product4Price * product4Quantity;
+  }
+
+  if (document.getElementById("product5Checkbox").checked) {
+    totalPrice += product5Price * product5Quantity;
+  }
+
+  if (document.getElementById("product6Checkbox").checked) {
+    totalPrice += product6Price * product6Quantity;
+  }
+  
+  if (document.getElementById("product7Checkbox").checked) {
+    totalPrice += product7Price * product7Quantity;
+  }
+
+  if (document.getElementById("product8Checkbox").checked) {
+    totalPrice += product8Price * product8Quantity;
+  }
+
+  if (document.getElementById("product9Checkbox").checked) {
+    totalPrice += product9Price * product9Quantity;
+  }
+  
+  if (document.getElementById("product10Checkbox").checked) {
+    totalPrice += product10Price * product10Quantity;
+  }
+
+  if (document.getElementById("product11Checkbox").checked) {
+    totalPrice += product11Price * product11Quantity;
+  }
+
+  if (document.getElementById("product12Checkbox").checked) {
+    totalPrice += product12Price * product12Quantity;
+  }
+  
+  if (document.getElementById("product13Checkbox").checked) {
+    totalPrice += product13Price * product13Quantity;
+  }
+
+  if (document.getElementById("product14Checkbox").checked) {
+    totalPrice += product14Price * product14Quantity;
+  }
+
+  if (document.getElementById("product15Checkbox").checked) {
+    totalPrice += product15Price * product15Quantity;
+  }
+  if (document.getElementById("product16Checkbox").checked) {
+    totalPrice += product16Price * product16Quantity;
+  }
+  if (document.getElementById("product17Checkbox").checked) {
+    totalPrice += product17Price * product17Quantity;
+  }
+  if (document.getElementById("product18Checkbox").checked) {
+    totalPrice += product18Price * product18Quantity;
+  }
+  if (document.getElementById("product19Checkbox").checked) {
+    totalPrice += product19Price * product19Quantity;
+  }
+  if (document.getElementById("product20Checkbox").checked) {
+    totalPrice += product20Price * product20Quantity;
+  }
+  
+  
+  var discount = 0;
+      if (document.getElementById('seniorDiscount').checked) {
+        discount = 20;
+      } else if (document.getElementById('pwdDiscount').checked) {
+        discount = 30;
+      } else if (document.getElementById('studentDiscount').checked) {
+        discount = 10;
+      }
+
+  document.getElementById("totalPrice").textContent = totalPrice;
+  
+  var discountedPrice = totalPrice - (totalPrice * discount / 100);
+      
+      
+      document.getElementById("totalPrice").textContent = discountedPrice.toFixed(2);
+    
+}
+</script>
+</body>
+</html>
+
